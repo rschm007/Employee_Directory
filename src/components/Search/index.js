@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
-import DataAreaContext from "../../utils/DataAreaContext";
 
 const Search = () => {
-    const context = useContext(DataAreaContext);
-
     return (
         <div className="search flex-1 mt-10">
             <form className="m-4 flex justify-center">
