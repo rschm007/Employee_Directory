@@ -27,9 +27,9 @@ const Table = (props) => {
   };
 
   return (
-    <div className="table m-10 px-5 bg-gray-50 rounded-sm border-2 border-light-blue-500 border-opacity-25">
+    <div className="table m-10 rounded-sm border-2 border-light-blue-500 border-opacity-25">
       <table className="table-auto justify-center">
-        <thead>
+        <thead className="bg-gray-200">
           <tr>
             <th className={styles.thStyles}>Image</th>
             <th className={styles.thStyles}>Name</th>

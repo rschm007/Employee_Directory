@@ -14,7 +14,7 @@ function App() {
 
   // hook to get list of users from API
   useEffect(() => {
-    API.getData()
+    API.getUsers(12)
       .then((res) => {
         // capture json data in vars
         setUsers(res.data.results);
@@ -31,16 +31,14 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-      })
-  })
+      });
+  }, []);
   return (
     <div className="App flex-auto mx-auto">
       <div className="wrapper">
         <Header />
         <Search />
-        <Table 
-          users={targetUsers}
-        />
+        <Table users={targetUsers} />
       </div>
     </div>
   );
