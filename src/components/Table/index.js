@@ -1,13 +1,19 @@
 import React from "react";
 import API from "../../utils/API";
 import TableRow from "../TableRow";
+import Search from "../Search";
+import SortColumn from "../SortColumn";
+
+// import chevrons for sort clicks
+import { ReactComponent as UpArrow } from "../../assets/chevron-up.svg";
+import { ReactComponent as DownArrow } from "../../assets/chevron-down.svg";
 
 const styles = {
-  thStyles: "p-5",
+  thStyles: "p-5 text-left",
 };
 
 const Table = (props) => {
-  // create props for rendering rows - map users into rows
+    // create props for rendering rows - map users into rows
   const renderRows = (users) => {
     return users.map((user, index) => {
       return (
@@ -32,16 +38,34 @@ const Table = (props) => {
         <thead className="bg-gray-200">
           <tr>
             <th className={styles.thStyles}>Image</th>
-            <th className={styles.thStyles}>Name</th>
-            <th className={styles.thStyles}>Email</th>
-            <th className={styles.thStyles}>Phone</th>
-            <th className={styles.thStyles}>Age</th>
-            <th className={styles.thStyles}>Date Registered</th>
+
+            <th className={styles.thStyles}>
+              <SortColumn>Name</SortColumn>
+              <Search />
+            </th>
+
+            <th className={styles.thStyles}>
+              <SortColumn>Email</SortColumn>
+              <Search />
+            </th>
+
+            <th className={styles.thStyles}>
+              <SortColumn>Phone</SortColumn>
+              <Search />
+            </th>
+
+            <th className={styles.thStyles}>
+              <SortColumn>Age</SortColumn>
+              <Search />
+            </th>
+
+            <th className={styles.thStyles}>
+              <SortColumn>Date Registered</SortColumn>
+              <Search />
+            </th>
           </tr>
         </thead>
-        <tbody>
-            {renderRows(props.users)}
-        </tbody>
+        <tbody>{renderRows(props.users)}</tbody>
       </table>
     </div>
   );

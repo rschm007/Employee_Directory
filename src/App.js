@@ -7,10 +7,18 @@ import API from "./utils/API";
 
 function App() {
   // set states
-  const [users, setUsers] = useState([]);
-  const [targetUsers, setTargetUsers] = useState([]);
-  const [countries, setCountries] = useState([]);
-  const [cities, setCities] = useState([]);
+  const [users, setUsers] = useState([]); // user state (gathers all users)
+  const [targetUsers, setTargetUsers] = useState([]); //
+  const [countries, setCountries] = useState([]); // country state
+  const [cities, setCities] = useState([]); // city state
+  const [sort, setSort] = useState({
+    // sorter state
+    name: "",
+    email: "",
+    phone: "",
+    age: "",
+    reg: "",
+  });
 
   // hook to get list of users from API
   useEffect(() => {
@@ -33,11 +41,12 @@ function App() {
         console.log(err);
       });
   }, []);
+
+
   return (
     <div className="App flex-auto mx-auto">
       <div className="wrapper">
         <Header />
-        <Search />
         <Table users={targetUsers} />
       </div>
     </div>
