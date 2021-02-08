@@ -27,15 +27,16 @@ const Table = (props) => {
   };
 
   return (
-    <div className="table m-10 rounded-sm border-2 border-light-blue-500 border-opacity-25">
-      <table className="table-auto justify-center">
+    <div className="table w-auto flex-none m-10 rounded-sm border-2 border-light-blue-500 border-opacity-25">
+      <table className="table-auto">
         <thead className="bg-gray-200">
           <tr>
             <th className={styles.thStyles}>Image</th>
             <th className={styles.thStyles}>Name</th>
             <th className={styles.thStyles}>Email</th>
             <th className={styles.thStyles}>Phone</th>
-            <th className={styles.thStyles}>DOB</th>
+            <th className={styles.thStyles}>Age</th>
+            <th className={styles.thStyles}>Date Registered</th>
           </tr>
         </thead>
         <tbody>
