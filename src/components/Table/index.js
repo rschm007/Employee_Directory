@@ -13,7 +13,6 @@ const styles = {
 };
 
 const Table = (props) => {
-  console.log(props);
     // create props for rendering rows - map users into rows
   const renderRows = (users) => {
     return users.map((user, index) => {
