@@ -13,6 +13,7 @@ const styles = {
 };
 
 const Table = (props) => {
+  console.log(props);
     // create props for rendering rows - map users into rows
   const renderRows = (users) => {
     return users.map((user, index) => {
@@ -32,6 +33,7 @@ const Table = (props) => {
     });
   };
 
+  // TODO: ADD LOCATION COLUMN
   return (
     <div className="table w-auto flex-none m-10 rounded-sm border-2 border-light-blue-500 border-opacity-25">
       <table className="table-auto">
@@ -41,27 +43,27 @@ const Table = (props) => {
 
             <th className={styles.thStyles}>
               <SortColumn>Name</SortColumn>
-              <Search />
+              <Search handleInputChange={props.handleInputChange} search={props.name} name="name" />
             </th>
 
             <th className={styles.thStyles}>
               <SortColumn>Email</SortColumn>
-              <Search />
+              <Search handleInputChange={props.handleInputChange} search={props.email} name="email" />
             </th>
 
             <th className={styles.thStyles}>
               <SortColumn>Phone</SortColumn>
-              <Search />
+              <Search handleInputChange={props.handleInputChange} search={props.phone} name="phone" />
             </th>
 
             <th className={styles.thStyles}>
               <SortColumn>Age</SortColumn>
-              <Search />
+              <Search handleInputChange={props.handleInputChange} search={props.age} name="age" />
             </th>
 
             <th className={styles.thStyles}>
               <SortColumn>Date Registered</SortColumn>
-              <Search />
+              <Search handleInputChange={props.handleInputChange} search={props.reg} name="reg" />
             </th>
           </tr>
         </thead>

@@ -7,8 +7,7 @@ const Search = (props) => {
         <input
           value={props.search}
           onChange={props.handleInputChange}
-          name="userSearch"
-          list="users"
+          name={props.name}
           type="text"
           className="rounded-lg p-1 w-auto border text-sm text-gray-800 border-gray-200 bg-white"
           placeholder="Search"
