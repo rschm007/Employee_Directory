@@ -20,8 +20,8 @@ function App() {
     email: "",
     phone: "",
     age: "",
-    reg: "",
-  });
+    reg: ""
+  })
 
   // hook to get list of users from API
   useEffect(() => {
@@ -38,47 +38,24 @@ function App() {
 
   // function for handling search queries on search inputs
   const handleInputChange = (event) => {
-    // capture value of the column header that the user targets
-    let columnHeader = event.target.name;
-    // switch statement that passes columnHeader to appropriate filter function
-    switch (columnHeader) {
-      case "name":
-        // spread in the search object and find the e.target.name that matches the value
-        // filter through users array based on e.target.value
-        const filteredUsers = users.filter((user) =>
-          user.name.first.startsWith(event.target.value)
-        );
-        setFilteredUsers(filteredUsers);
-        setSearch({
-          ...search,
-          [event.target.name]: event.target.value, // e.target.name = event target string name; e.target.value = keydown
-        });
-        break;
-      default:
-        break;
-    }
+    // TODO: SWITCH STATEMENT FOR EACH SEARCH COLUMN INPUT
+    // spread in the search object and find the e.target.name that matches the value
+    // filter through users array based on e.target.value
+    const filteredUsers = users.filter(user => user.name.first.startsWith(event.target.value));
+    setFilteredUsers(filteredUsers);    
+    setSearch({
+      ...search,
+      [event.target.name]: event.target.value, // e.target.name = event target string name; e.target.value = keydown
+    });
   };
 
-  const handleSortClick = (e) => {
+  const handleSortClick = (event) => {
     // set a new sort object
-    let newSort = { ...sort };
+    let newSort = {...sort};
     // capture value of column header
-    const columnHeader = e.target.dataset.name;
+    const columnHeader = event.target.dataset.name;
 
-    switch (columnHeader) {
-      case "Name":
-
-      case "Email":
-
-      case "Phone":
-
-      case "Age":
-
-      case "Reg":
-
-      default:
-    }
-  };
+  }
 
   return (
     <div className="App flex-auto mx-auto">
