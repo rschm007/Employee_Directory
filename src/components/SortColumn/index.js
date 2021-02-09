@@ -1,14 +1,17 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SortColumn = (props) => {
   return (
-    <div
-      data-direction={props.direction}
-      data-column={props.column} // identifies which column the user clicked on
-      onClick={props.handleSortClick}
-    >
+    <div>
       {props.children}
-      <span className="mx-2">{props.arrow}</span>
+      <FontAwesomeIcon
+        icon={props.icon}
+        className="mx-2 cursor-pointer"
+        data-direction={props.direction} // identifies which direction the props.arrow is pointing
+        data-column={props.column} // identifies which column the user clicked on
+        onClick={props.handleSortClick}
+      />
     </div>
   );
 };

@@ -4,16 +4,12 @@ import TableRow from "../TableRow";
 import Search from "../Search";
 import SortColumn from "../SortColumn";
 
-// import chevrons for sort clicks
-import { ReactComponent as UpArrow } from "../../assets/chevron-up.svg";
-import { ReactComponent as DownArrow } from "../../assets/chevron-down.svg";
-
 const styles = {
   thStyles: "p-5 text-left",
 };
 
 const Table = (props) => {
-    // create props for rendering rows - map users into rows
+  // create props for rendering rows - map users into rows
   const renderRows = (users) => {
     return users.map((user, index) => {
       return (
@@ -41,28 +37,47 @@ const Table = (props) => {
             <th className={styles.thStyles}>Image</th>
 
             <th className={styles.thStyles}>
-              <SortColumn>Name</SortColumn>
-              <Search handleInputChange={props.handleInputChange} search={props.name} name="name" />
+              <SortColumn
+                column="name"
+                icon={props.icon}
+                onClick={props.handleSortClick}
+                arrow={props.arrow}
+              >
+                Name
+              </SortColumn>
+              <Search
+                handleInputChange={props.handleInputChange}
+                search={props.name}
+                name="name"
+              />
             </th>
 
             <th className={styles.thStyles}>
-              <SortColumn>Email</SortColumn>
-              <Search handleInputChange={props.handleInputChange} search={props.email} name="email" />
+              {/* <SortColumn> */}
+              Email
+              {/* </SortColumn> */}
+              {/* <Search handleInputChange={props.handleInputChange} search={props.email} name="email" /> */}
             </th>
 
             <th className={styles.thStyles}>
-              <SortColumn>Phone</SortColumn>
-              <Search handleInputChange={props.handleInputChange} search={props.phone} name="phone" />
+              {/* <SortColumn> */}
+              Phone
+              {/* </SortColumn> */}
+              {/* <Search handleInputChange={props.handleInputChange} search={props.phone} name="phone" /> */}
             </th>
 
             <th className={styles.thStyles}>
-              <SortColumn>Age</SortColumn>
-              <Search handleInputChange={props.handleInputChange} search={props.age} name="age" />
+              {/* <SortColumn> */}
+              Age
+              {/* </SortColumn> */}
+              {/* <Search handleInputChange={props.handleInputChange} search={props.age} name="age" /> */}
             </th>
 
             <th className={styles.thStyles}>
-              <SortColumn>Date Registered</SortColumn>
-              <Search handleInputChange={props.handleInputChange} search={props.reg} name="reg" />
+              {/* <SortColumn> */}
+              Date Registered
+              {/* </SortColumn> */}
+              {/* <Search handleInputChange={props.handleInputChange} search={props.reg} name="reg" /> */}
             </th>
           </tr>
         </thead>

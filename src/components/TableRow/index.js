@@ -33,14 +33,6 @@ const TableRow = (props) => {
           <div className={styles.textStyles}>{props.username}</div>
         </div>
       </td>
-      {/* <td className={styles.tdStyles}>
-        <div className={styles.textStyles}>
-          {props.location.street.number + " " + props.location.street.name}
-        </div>
-        <div className={styles.textStyles}>
-          {props.location.city + ", " + props.location.country}
-        </div>
-      </td> */}
       <td className={styles.tdStyles}>
         <div className={styles.textStyles}>{props.email}</div>
       </td>
