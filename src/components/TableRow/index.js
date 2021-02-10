@@ -9,7 +9,6 @@ const styles = {
   textStyles: "text-sm font-base text-gray-900",
 };
 
-// TODO: ADD LOCATION COLUMN
 const TableRow = (props) => {
   const regDate = new Date(props.registered).toDateString();
   return (

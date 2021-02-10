@@ -28,7 +28,6 @@ const Table = (props) => {
     });
   };
 
-  // TODO: ADD LOCATION COLUMN
   return (
     <div className="table w-auto flex-none m-10 rounded-sm border-2 border-light-blue-500 border-opacity-25">
       <table className="table-auto">
@@ -40,8 +39,8 @@ const Table = (props) => {
               <SortColumn
                 column="name"
                 icon={props.icon}
-                onClick={props.handleSortClick}
-                arrow={props.arrow}
+                onClick={props.onClick}
+                // arrow={props.arrow}
               >
                 Name
               </SortColumn>

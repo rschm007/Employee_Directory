@@ -10,7 +10,8 @@ const SortColumn = (props) => {
         className="mx-2 cursor-pointer"
         data-direction={props.direction} // identifies which direction the props.arrow is pointing
         data-column={props.column} // identifies which column the user clicked on
-        onClick={props.handleSortClick}
+        onClick=
+        {props.onClick}
       />
     </div>
   );
