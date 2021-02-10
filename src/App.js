@@ -19,7 +19,9 @@ function App() {
     // age: "",
     // reg: "",
   });
-  const [sortedColumn, setSortedColumn] = useState([]);
+  const [sortedColumn, setSortColumn] = useState({
+    sort: "desc",
+  });
 
   // hook to get list of users from API
   useEffect(() => {
@@ -51,11 +53,20 @@ function App() {
 
   // function for handling sorting of columns
   const handleSortClick = (event) => {
-    console.log("click");
-    const userData = users.sort((user1, user2) => {
-      return user1.name.last.localeCompare(user2.name.last);
-    });
-    return setUsers([...userData]);
+    // set a new sort object
+    let newSort = { ...sortedColumn };
+
+    if (newSort.sort === "desc") {
+      users.sort((a, b) => a.name.first > b.name.first ? 1 : -1);
+      setSortColumn({
+        sort: "asc",
+      });
+    } else if (newSort.sort === "asc") {
+      users.sort((a, b) => a.name.first < b.name.first ? 1 : -1);
+      setSortColumn({
+        sort: "desc",
+      });
+    }
   };
 
   return (
