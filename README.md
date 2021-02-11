@@ -5,6 +5,11 @@
   
 Check out the badges hosted by [shields.io](https://shields.io/).
 
+## Links
+
+Repository: <a href="https://github.com/rschm007/Employee_Directory">https://github.com/rschm007/Employee_Directory</a>
+
+Deployed App: <a href="https://rschm007.github.io/Employee_Directory/">https://rschm007.github.io/Employee_Directory/</a>
 
 ## Description
 
