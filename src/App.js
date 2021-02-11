@@ -38,9 +38,6 @@ function App() {
 
   // function for handling search queries on search inputs
   const handleInputChange = (event) => {
-    // TODO: SWITCH STATEMENT FOR EACH SEARCH COLUMN INPUT
-    // spread in the search object and find the e.target.name that matches the value
-    // filter through users array based on e.target.value
     const filteredUsers = users.filter((user) =>
       user.name.first.startsWith(event.target.value)
     );
@@ -68,6 +65,11 @@ function App() {
       });
     }
   };
+
+  // function for handling which arrow to pass as a prop
+  const handleArrowDirection = () => {
+    
+  }
 
   return (
     <div className="App flex-auto mx-auto">
